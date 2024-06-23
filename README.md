@@ -5,7 +5,7 @@ step by step belajar github pemula
 1. membuat repository di github
 2. readme.md harus di ceklist
 3. memasukkan repository ke laptop
-4. git clone url repository
+4. git clone url repository (diambilnya dari "Code" di github)
 
 memasukkan project ke github
 
