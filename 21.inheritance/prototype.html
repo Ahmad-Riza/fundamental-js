@@ -13,7 +13,7 @@
         username = "";
         age = 0;
 
-        constructor(inputFirstName, inputLastName, inputUsername, inputAge) {
+        constructor(inputUsername, inputAge, inputFirstName, inputLastName) {
           this.firstName = inputFirstName;
           this.lastName = inputLastName;
           this.username = inputUsername;
@@ -24,9 +24,9 @@
           return `${this.firstName} ${this.lastName}`;
         }
 
-        greeting() {
+        greeting = function () {
           return `Hello, I'm ${this.#getFullName()}`;
-        }
+        };
 
         introduct() {
           return `My Name is ${this.#getFullName()}, I am ${
@@ -35,11 +35,17 @@
         }
       }
 
-      // const user1 = new User("Ahmad", "Javascript", "doraemon", 20);
+      class Admin {}
+
+      Admin = User;
+
+      Admin.prototype.division = "finance";
+
+      const user1 = new Admin("Ahmad", "Javascript", "doraemon", 20);
       const user2 = new User("Naruto", "Uzumaki", "naruto", 18);
 
-      console.log(user1.greeting());
-      console.log(user1.introduct());
+      console.log(user1);
+      console.log(user2);
     </script>
   </body>
 </html>

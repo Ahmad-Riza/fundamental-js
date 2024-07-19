@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class User {
+        firstName = "";
+        lastName = "";
+        username = "";
+        age = 0;
+
+        constructor(inputUsername, inputAge, inputFirstName, inputLastName) {
+          this.firstName = inputFirstName;
+          this.lastName = inputLastName;
+          this.username = inputUsername;
+          this.age = inputAge;
+        }
+
+        #getFullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+
+        greeting = function () {
+          return `Hello, I'm ${this.#getFullName()}`;
+        };
+
+        introduct() {
+          return `My Name is ${this.#getFullName()}, I am ${
+            this.age
+          } years old`;
+        }
+      }
+
+      class Admin extends User {
+        division = "";
+
+        constructor(
+          inputUsername,
+          inputAge,
+          inputFirstName,
+          inputLastName,
+          inputDivison
+        ) {
+          super(inputUsername, inputAge, inputFirstName, inputLastName);
+
+          this.division = inputDivison;
+        }
+
+        greeting = function () {
+          return `Hello, I'm an admin`;
+        };
+      }
+
+      const admin = new Admin("Ahmad", "Javascript", "doraemon", 20, "Sales");
+      const user = new User("Naruto", "Uzumaki", "naruto", 18);
+
+      console.log(admin.greeting());
+      console.log(user.greeting());
+    </script>
+  </body>
+</html>
