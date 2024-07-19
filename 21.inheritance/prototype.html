@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class User {
+        firstName = "";
+        lastName = "";
+        username = "";
+        age = 0;
+
+        constructor(inputFirstName, inputLastName, inputUsername, inputAge) {
+          this.firstName = inputFirstName;
+          this.lastName = inputLastName;
+          this.username = inputUsername;
+          this.age = inputAge;
+        }
+
+        #getFullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+
+        greeting() {
+          return `Hello, I'm ${this.#getFullName()}`;
+        }
+
+        introduct() {
+          return `My Name is ${this.#getFullName()}, I am ${
+            this.age
+          } years old`;
+        }
+      }
+
+      // const user1 = new User("Ahmad", "Javascript", "doraemon", 20);
+      const user2 = new User("Naruto", "Uzumaki", "naruto", 18);
+
+      console.log(user1.greeting());
+      console.log(user1.introduct());
+    </script>
+  </body>
+</html>
